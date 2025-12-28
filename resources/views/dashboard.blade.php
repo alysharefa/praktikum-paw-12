@@ -10,6 +10,14 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+                    
+                    @if(Auth::user()->role === 'admin')
+                        <div class="mt-4">
+                            <a href="{{ route('products.create') }}" class="btn btn-primary text-blue-500 hover:text-blue-700 underline">
+                                Tambah Produk
+                            </a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
